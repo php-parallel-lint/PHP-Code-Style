@@ -1,5 +1,5 @@
 {
-    "name": "jakub-onderka/php-code-style",
+    "name": "php-parallel-lint/php-code-style",
     "version": "1.0",
     "type": "library",
     "license": "MIT",
