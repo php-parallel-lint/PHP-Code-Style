@@ -9,5 +9,8 @@
             "email": "jakub.onderka@gmail.com",
             "homepage": "http://www.acci.cz"
         }
-    ]
+    ],
+    "replace": {
+        "jakub-onderka/php-code-style": "*"
+    }
 }
