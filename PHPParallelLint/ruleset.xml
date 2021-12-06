@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-<ruleset name="Jakub Onderka Coding Standard">
-    <description>A coding standard for Jakub Onderka's projects.</description>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PHPParallelLint" xsi:noNamespaceSchemaLocation="../vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+    <description>A coding standard for projects in the PHP Parallel Lint organisation.</description>
 
     <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
     <rule ref="PEAR.Functions.FunctionDeclaration"/>
