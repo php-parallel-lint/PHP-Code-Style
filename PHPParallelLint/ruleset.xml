@@ -30,24 +30,26 @@
     #############################################################################
     -->
 
+    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+
+    <rule ref="Generic.Metrics.CyclomaticComplexity"/>
+    <rule ref="Generic.Metrics.NestingLevel"/>
+
+    <rule ref="Generic.NamingConventions.ConstructorName"/>
+
     <rule ref="Generic.PHP.NoSilencedErrors"/>
+
+    <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
+
+    <rule ref="PEAR.Commenting.InlineComment"/>
+
+    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+
     <rule ref="Squiz.PHP.GlobalKeyword"/>
     <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
     <rule ref="Squiz.PHP.NonExecutableCode"/>
 
-    <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
-
-    <rule ref="Generic.NamingConventions.ConstructorName"/>
-
-    <rule ref="Generic.Metrics.NestingLevel"/>
-    <rule ref="Generic.Metrics.CyclomaticComplexity"/>
-
-    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
-    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
-
-    <rule ref="PEAR.Commenting.InlineComment"/>
-
-    <rule ref="Generic.Formatting.SpaceAfterCast"/>
-
-    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
 </ruleset>
