@@ -33,6 +33,20 @@
 
     <!--
     #############################################################################
+    SNIFF FOR PHP CROSS-VERSION COMPATIBILITY
+    https://github.com/PHPCompatibility/PHPCompatibility/
+
+    It is STRONGLY recommended for individual projects to set a `testVersion`
+    config indicating which PHP versions should be supported.
+    https://github.com/PHPCompatibility/PHPCompatibility/#using-a-custom-ruleset
+    #############################################################################
+    -->
+
+    <rule ref="PHPCompatibility"/>
+
+
+    <!--
+    #############################################################################
     MISCELLANEOUS ADDITIONAL RULES
     #############################################################################
     -->
