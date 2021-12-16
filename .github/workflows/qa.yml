@@ -1,0 +1,61 @@
+name: QA
+
+on:
+  pull_request:
+  push:
+    branches:
+      - develop
+      - master
+  # Allow manually triggering the workflow.
+  workflow_dispatch:
+
+# Cancels all previous workflow runs for the same branch that have not yet completed.
+concurrency:
+  # The concurrency group contains the workflow name and the branch name.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: 'Basic QA checks'
+    runs-on: ubuntu-latest
+
+    env:
+      XMLLINT_INDENT: '    '
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          coverage: none
+          tools: cs2pr
+
+      # Validate the composer.json file.
+      # @link https://getcomposer.org/doc/03-cli.md#validate
+      - name: Validate Composer installation
+        run: composer validate --no-check-all --strict
+
+      # Verify the package can be installed succesfully.
+      # @link https://github.com/marketplace/actions/install-composer-dependencies
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v1
+
+      - name: Install xmllint
+        run: sudo apt-get install --no-install-recommends -y libxml2-utils
+
+      # Show XML violations inline in the file diff.
+      # @link https://github.com/marketplace/actions/xmllint-problem-matcher
+      - uses: korelstar/xmllint-problem-matcher@v1
+
+      # Validate the ruleset XML file.
+      # @link http://xmlsoft.org/xmllint.html
+      - name: Validate ruleset against XML schema
+        run: xmllint --noout --schema ./vendor/squizlabs/php_codesniffer/phpcs.xsd ./PHPParallelLint/ruleset.xml
+
+      # Check the code-style consistency of the XML ruleset files.
+      - name: Check XML ruleset code style
+        run: diff -B --tabsize=4 ./PHPParallelLint/ruleset.xml <(xmllint --format "./PHPParallelLint/ruleset.xml")

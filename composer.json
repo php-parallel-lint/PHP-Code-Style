@@ -1,6 +1,6 @@
 {
     "name": "php-parallel-lint/php-code-style",
-    "version": "1.0",
+    "description": "PHP_CodeSniffer rules for projects in the PHP Parallel Lint organisation",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -12,5 +12,10 @@
     ],
     "replace": {
         "jakub-onderka/php-code-style": "*"
+    },
+    "require": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "squizlabs/php_codesniffer": "^3.6.1"
     }
 }
