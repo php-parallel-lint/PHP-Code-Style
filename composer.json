@@ -1,7 +1,7 @@
 {
     "name": "php-parallel-lint/php-code-style",
     "description": "PHP_CodeSniffer rules for projects in the PHP Parallel Lint organisation",
-    "type": "library",
+    "type": "phpcodesniffer-standard",
     "license": "MIT",
     "authors": [
         {
