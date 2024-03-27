@@ -8,6 +8,10 @@
             "name": "Jakub Onderka",
             "email": "jakub.onderka@gmail.com",
             "homepage": "http://www.acci.cz"
+        },
+        {
+            "name" : "Contributors",
+            "homepage" : "https://github.com/php-parallel-lint/PHP-Code-Style/graphs/contributors"
         }
     ],
     "replace": {
